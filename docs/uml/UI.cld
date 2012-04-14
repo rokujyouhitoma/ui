@@ -166,8 +166,8 @@
                   <constraint>
                     <height>-1</height>
                     <width>-1</width>
-                    <x>249</x>
-                    <y>195</y>
+                    <x>247</x>
+                    <y>205</y>
                   </constraint>
                   <sourceConnections>
                     <net.java.amateras.uml.classdiagram.model.GeneralizationModel>
@@ -903,7 +903,7 @@ UI.WebView
                               </listeners>
                             </net.java.amateras.uml.classdiagram.model.ClassModel>
                             <net.java.amateras.uml.model.NoteModel>
-                              <content>AbstractView.js
+                              <content>GLUI.AbstractView.js
 
 Button.js
 CellView.js
@@ -958,27 +958,15 @@ ScrollView.js
 Spinner.js
 
 
-
-
 View.js
+
 Window.js
-
-
-
-
-
-
-
 NGWindow.js
 Sprite.js
 Util.js
-
 ViewGeometry.js
-
 WindowLayer.js
-
-Extra/Slider
-</old>
+Extra/Slider</old>
                               <constraint>
                                 <height>433</height>
                                 <width>172</width>
