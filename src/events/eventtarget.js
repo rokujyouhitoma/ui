@@ -13,6 +13,7 @@ var EventTarget = function() {};
  * @return {Boolean} .
  */
 EventTarget.prototype.addEventListener = function(type, listener, useCapture) {
+    events.listen(this, type, listener, useCapture);
 };
 
 
