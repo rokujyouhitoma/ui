@@ -1,8 +1,21 @@
 /**
  * @constructor
  */
-var EventListener = function() {
-};
+var EventListener = function() {};
+
+/**
+ * Counter used to create a unique key
+ * @type {number}
+ * @private
+ */
+EventListener.counter_ = 0;
+
+
+/**
+ * The key of the listener.
+ * @type {number}
+ */
+EventListener.prototype.key = 0;
 
 
 /**
@@ -22,12 +35,11 @@ EventListener.prototype.isFunctionListener_;
  * @param {boolean} capture Whether in capture or bubble phase.
  * @param {Object=} opt_handler Object in whose context to execute the callback.
  */
-EventListener.prototype.init = function(listener, src, type,
-                                        capture, opt_handler) {
+EventListener.prototype.init = function(listener, src, type, capture,
+                                        opt_handler) {
     if (listener instanceof Function) {
         this.isFunctionListener_ = true;
-    } else if (listener && listener.handleEvent &&
-               listener.handleEvent instanceof Function) {
+    } else if (listener && listener.handleEvent && listener.handleEvent instanceof Function) {
         this.isFunctionListener_ = false;
     } else {
         throw Error('Invalid listener argument');
@@ -38,6 +50,8 @@ EventListener.prototype.init = function(listener, src, type,
     this.type = type;
     this.capture = !!capture;
     this.handler = opt_handler;
+
+    this.key = ++EventListener.counter_;
 };
 
 

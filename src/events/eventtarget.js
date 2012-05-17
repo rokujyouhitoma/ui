@@ -1,3 +1,6 @@
+var events = require("./events").events;
+
+
 /**
  * http://www.w3.org/2003/01/dom2-javadoc/org/w3c/dom/events/EventTarget.html
  * @constructor
@@ -22,6 +25,7 @@ EventTarget.prototype.addEventListener = function(type, listener, useCapture) {
  * @param {Event} evt .
  */
 EventTarget.prototype.dispatchEvent = function(evt) {
+    events.dispatchEvent(this, e);
 };
 
 
@@ -31,6 +35,7 @@ EventTarget.prototype.dispatchEvent = function(evt) {
  * @param {Boolean?} useCapture .
  */
 EventTarget.prototype.removeEventListener = function(type, listener, useCapture) {
+    events.unlisten(this, type, listener, useCapture);
 };
 
 
